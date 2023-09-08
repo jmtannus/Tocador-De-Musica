@@ -61,8 +61,8 @@ const rockafellerSkank = {
 };
 let isPlaying = false;
 let isShuffled = false;
-const playlist = [weaponOfChoice, hangingByaMoment, littleTalks, lastNite, andreaDoria, hearMeOut, cmere, faint, wish, rockafellerSkank];
-let sortedPlaylist
+const originalPlaylist = [weaponOfChoice, hangingByaMoment, littleTalks, lastNite, andreaDoria, hearMeOut, cmere, faint, wish, rockafellerSkank];
+let sortedPlaylist = [...originalPlaylist]
 let index = 0;
 
 function playSong() {
@@ -88,15 +88,15 @@ function playPauseDecider() {
 }
 
 function initializeSong() {
-  cover.src = `images/${playlist[index].file}.jpg`;
-  song.src = `songs/${playlist[index].file}.mp3`;
-  songName.innerText = playlist[index].songName;
-  bandName.innerText = playlist[index].artist;
+  cover.src = `images/${sortedPlaylist[index].file}.jpg`;
+  song.src = `songs/${sortedPlaylist[index].file}.mp3`;
+  songName.innerText = sortedPlaylist[index].songName;
+  bandName.innerText = sortedPlaylist[index].artist;
 }
 
 function previousSong() {
   if (index === 0) {
-    index = playlist.length - 1;
+    index = sortedPlaylist.length - 1;
   } else {
     index -= 1;
   }
@@ -105,7 +105,7 @@ function previousSong() {
 }
 
 function nextSong() {
-  if (index === playlist.length - 1) {
+  if (index === sortedPlaylist.length - 1) {
     index = 0;
   } else {
     index += 1;
@@ -124,6 +124,18 @@ function jumpTo(event) {
   const clickPosition = event.offsetX;
   const jumpToTime = (clickPosition/width)* song.duration;
   song.currentTime = jumpToTime;
+}
+
+function shuffleArray(preShuffleArray) {
+  const size = preShuffleArray.length;
+  let currentIndex = size -1;
+  while(currentIndex > 0){
+    let randomIndex = Math.floor(Math.random()* size);
+    let aux = preShuffleArray[currentIndex];
+    preShuffleArray[currentIndex] = preShuffleArray[randomIndex];
+    preShuffleArray[randomIndex] = aux;
+    currentIndex -= 1;
+  } 
 }
 
 function shuffleButtonClicked() {
