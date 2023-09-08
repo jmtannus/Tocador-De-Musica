@@ -141,7 +141,7 @@ function shuffleArray(preShuffleArray) {
 function shuffleButtonClicked() {
   if(isShuffled === false){
     isShuffled = true;
-    shuffleArray();
+    shuffleArray(sortedPlaylist);
   }
 }
 
