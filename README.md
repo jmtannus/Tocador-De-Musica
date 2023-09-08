@@ -1,6 +1,6 @@
 # Meu-Tocador-De-Musica 🎧
 
-## Com algumas Imagens geradas por IA 🤖
+## Com algumas Imagens geradas por IA 🤖 e icones by [Bootstrap](https://icons.getbootstrap.com)
 
 > [Curso Básico de JavaScript](https://youtu.be/rmNMBjse-m0?si=X7f3a7ZWVGr88WXG) - Projeto Web - [Hashtag Programação](https://www.youtube.com/@HashtagProgramacao)
 
