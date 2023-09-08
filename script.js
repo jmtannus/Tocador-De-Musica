@@ -111,16 +111,16 @@ function nextSong() {
   playSong();
 }
 
-function updateProgressBar(){
+function updateProgressBar() {
   const barWidht = (song.currentTime/song.duration)*100;
   currentProgress.style.setProperty(`--progress`, `${barWidth}%`);
 };
 
-function jumpTo(event){
-  const width: 
-  const 
-  const 
-  song.
+function jumpTo(event) {
+  const width = progressContainer.clientWidht;
+  const clickPosition = event.offsetX;
+  const jumpToTime = (clickPosition/width)* song.duration;
+  song.currentTime = jumpToTime;
 }
 
 initializeSong();
