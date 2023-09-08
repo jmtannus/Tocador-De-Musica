@@ -31,6 +31,7 @@ button {
 
 .button {
     font-size: 1.5em;
+    cursor: pointer;
 }
 
 .button-navigate {
@@ -72,7 +73,6 @@ button {
     height: 3px;
     widht: 100%;
     border-radius: 15px;
-    //margin-botton: 1.5em;
 }
 
 #current-progress {

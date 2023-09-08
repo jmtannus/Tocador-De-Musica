@@ -9,6 +9,8 @@ const currentProgress = document.getElementById('current-progress');
 const progressContainer = document.getElementById('progress-container');
 const shuffleButton = document.getElementById('shuffle');
 const repeatButton = document.getElementById('repeat');
+const songTime = document.getElementById('song-time');
+const totalTime = document.getElementById('total-time');
 
 const weaponOfChoice = {
   songName : "Weapon of Choice" ,
@@ -165,7 +167,29 @@ function shuffleButtonClicked() {
 }
 
 function repeatButtonClicked() {
+  if (repeatOn === false) {
+    repeatOn = true;
+    repeatButton.classList.add('button-active');
+  } else {
+    repeatOn = false;
+    repeatButton.classList.remove('button-active');
+  }
+}
 
+function updateCurrentTime() {
+  songTime.innerText = song.currentTime;
+}
+
+function updateTotalTime() {
+  songTime.innerText = song.duration;
+}
+
+function nextOrRepeat() {
+  if (repeatOn === false) {
+    nextSong();
+  } else {
+    playSong();
+  }
 }
 
 initializeSong();
@@ -173,7 +197,8 @@ initializeSong();
 play.addEventListener("click" , playPauseDecider);
 previous.addEventListener("click" , previousSong);
 next.addEventListener("click" , nextSong);
-song.addEventListener('timeupdate' , updateProgressBar);
+song.addEventListener('timeupdate' , nextOrRepeat);
 progressContainer.addEventListener('click', jumpTo);
+//shuffleButton.addEventListener("click", playPauseDecidersheffleButtonClicked);
 shuffleButton.addEventListener('click', shuffleButtonClicked);
 repeatButton.addEventListener('click', repeatButtonClicked);
