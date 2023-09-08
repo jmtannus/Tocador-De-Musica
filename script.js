@@ -60,23 +60,33 @@ const rockafellerSkank = {
   artist : "Fatboy Slim" ,
   file : "rockafellerSkank"
 };
+const thatGirl = {
+  songName : "That Girl" ,
+  artist : "Maxi Priest & Shaggy" ,
+  file : "thatGirl"
+};
+const euSei = {
+  songName : "Eu sei" ,
+  artist : "Papas Na Lingua" ,
+  file : "euSei"
+};
 let isPlaying = false;
 let isShuffled = false;
 let repeatOn = false;
-const originalPlaylist = [weaponOfChoice, hangingByaMoment, littleTalks, lastNite, andreaDoria, hearMeOut];
+const originalPlaylist = [weaponOfChoice, hangingByaMoment, littleTalks, lastNite, andreaDoria, hearMeOut, cmere, faint, wish, rockafellerSkank, thatGirl, euSei];
 let sortedPlaylist = [...originalPlaylist]
 let index = 0;
 
-function playSong() {
-  play.querySelector('".bi"').classList.remove("bi-play-circle-fill");
-  play.querySelector(".bi").classList.add("bi-pause-circle-fill");
+function playSong() {  
+  play.querySelector('.bi').classList.remove("bi-play-circle-fill");
+  play.querySelector('.bi').classList.add("bi-pause-circle-fill");
   song.play();
   isPlaying = true;
 }
 
 function pauseSong() {
-  play.querySelector(".bi").classList.add("bi-play-circle-fill");
-  play.querySelector(".bi").classList.remove("bi-pause-circle-fill");
+  play.querySelector('.bi').classList.add("bi-play-circle-fill");
+  play.querySelector('.bi').classList.remove("bi-pause-circle-fill");
   song.pause();
   isPlaying = false;
 }
