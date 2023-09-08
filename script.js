@@ -7,7 +7,8 @@ const next = document.getElementById("next");
 const previous = document.getElementById("previous");
 const currentProgress = document.getElementById('current-progress');
 const progressContainer = document.getElementById('progress-container');
-const shuffleButton = document.getElementById('shuffleButtonClick');
+const shuffleButton = document.getElementById('shuffle');
+const repeatButton = document.getElementById('repeat');
 
 const weaponOfChoice = {
   songName : "Weapon of Choice" ,
@@ -61,12 +62,13 @@ const rockafellerSkank = {
 };
 let isPlaying = false;
 let isShuffled = false;
-const originalPlaylist = [weaponOfChoice, hangingByaMoment, littleTalks, lastNite, andreaDoria, hearMeOut, cmere, faint, wish, rockafellerSkank];
+let repeatOn = false;
+const originalPlaylist = [weaponOfChoice, hangingByaMoment, littleTalks, lastNite, andreaDoria, hearMeOut];
 let sortedPlaylist = [...originalPlaylist]
 let index = 0;
 
 function playSong() {
-  play.querySelector(".bi").classList.remove("bi-play-circle-fill");
+  play.querySelector('".bi"').classList.remove("bi-play-circle-fill");
   play.querySelector(".bi").classList.add("bi-pause-circle-fill");
   song.play();
   isPlaying = true;
@@ -152,6 +154,10 @@ function shuffleButtonClicked() {
   }
 }
 
+function repeatButtonClicked() {
+
+}
+
 initializeSong();
 
 play.addEventListener("click" , playPauseDecider);
@@ -159,4 +165,5 @@ previous.addEventListener("click" , previousSong);
 next.addEventListener("click" , nextSong);
 song.addEventListener('timeupdate' , updateProgressBar);
 progressContainer.addEventListener('click', jumpTo);
-shuffleButton.addEventListener('click', shuffleButtonClick);
+shuffleButton.addEventListener('click', shuffleButtonClicked);
+repeatButton.addEventListener('click', repeatButtonClicked);
