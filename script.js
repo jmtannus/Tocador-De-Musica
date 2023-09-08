@@ -5,60 +5,64 @@ const cover = document.getElementById("cover");
 const play = document.getElementById("play");
 const next = document.getElementById("next");
 const previous = document.getElementById("previous");
+const currentProgress = document.getElementById('current-progress');
+const progressContainer = document.getElementById('progress-container');
+const shuffleButton = document.getElementById('shuffleButtonClick');
 
-//seção de variáveis auxiliares para o meu código
 const weaponOfChoice = {
-  songName: "Weapon of Choice",
-  artist: "Fatboy Slim",
-  file: "weapon-of-choice"
-};
+  songName : "Weapon of Choice" ,
+  artist : "Fatboy Slim" ,
+  file : "weapon-of-choice"
+} ;
 const hangingByaMoment = {
-  songName: "Hanging by a moment",
-  artist: "Lifehouse",
-  file: "hanging-by-a-moment"
+  songName : "Hanging by a moment" ,
+  artist : "Lifehouse" ,
+  file : "hanging-by-a-moment"
 };
 const littleTalks = {
-  songName: "Little Talks",
-  artist: "Of Monsters and Men",
-  file: "littleTalks"
+  songName : "Little Talks" ,
+  artist : "Of Monsters and Men" ,
+  file : "littleTalks"
 };
 const lastNite = {
-  songName: "Last Nite",
-  artist: "Jumbonics",
-  file: "lastNite"
+  songName : "Last Nite" ,
+  artist : "Jumbonics" ,
+  file : "lastNite"
 };
 const andreaDoria = {
-  songName: "Andrea Doria",
-  artist: "Legiao Urbana",
-  file: "andreaDoria"
-};
+  songName : "Andrea Doria" ,
+  artist : "Legiao Urbana" ,
+  file : "andreaDoria"
+} ;
 const hearMeOut = {
-  songName: "Hear Me Out",
-  artist: "Frou Frou",
-  file: "hearMeOut"
+  songName : "Hear Me Out" ,
+  artist : "Frou Frou" ,
+  file : "hearMeOut"
 };
 const cmere = {
-  songName: "C mere",
-  artist: "Interpol",
-  file: "cmere"
+  songName : "C mere" ,
+  artist : "Interpol" ,
+  file : "cmere"
 };
 const faint = {
-  songName: "Faint",
-  artist: "Linkin Park",
-  file: "faint"
+  songName : "Faint" ,
+  artist : "Linkin Park" ,
+  file : "faint"
 };
 const wish = {
-  songName: "I Wish I Knew How It Would Feel To Be Free",
-  artist: "Billy Taylor",
-  file: "wish"
+  songName : "I Wish I Knew How It Would Feel To Be Free" ,
+  artist : "Billy Taylor" ,
+  file : "wish"
 };
 const rockafellerSkank = {
-  songName: "The Rockafeller Skank ",
-  artist: "Fatboy Slim",
-  file: "rockafellerSkank"
+  songName : "The Rockafeller Skank " ,
+  artist : "Fatboy Slim" ,
+  file : "rockafellerSkank"
 };
 let isPlaying = false;
+let isShuffled = false;
 const playlist = [weaponOfChoice, hangingByaMoment, littleTalks, lastNite, andreaDoria, hearMeOut, cmere, faint, wish, rockafellerSkank];
+let sortedPlaylist
 let index = 0;
 
 function playSong() {
@@ -84,11 +88,10 @@ function playPauseDecider() {
 }
 
 function initializeSong() {
-  cover.src = `images/${playlist[index].file}.webp`;
+  cover.src = `images/${playlist[index].file}.jpg`;
   song.src = `songs/${playlist[index].file}.mp3`;
   songName.innerText = playlist[index].songName;
   bandName.innerText = playlist[index].artist;
-  likeButtonRender();
 }
 
 function previousSong() {
@@ -113,7 +116,7 @@ function nextSong() {
 
 function updateProgressBar() {
   const barWidht = (song.currentTime/song.duration)*100;
-  currentProgress.style.setProperty(`--progress`, `${barWidth}%`);
+  currentProgress.style.setProperty("--progress", `${barWidht}%`);
 };
 
 function jumpTo(event) {
@@ -123,6 +126,13 @@ function jumpTo(event) {
   song.currentTime = jumpToTime;
 }
 
+function shuffleButtonClicked() {
+  if(isShuffled === false){
+    isShuffled = true;
+    shuffleArray();
+  }
+}
+
 initializeSong();
 
 play.addEventListener("click" , playPauseDecider);
@@ -130,3 +140,4 @@ previous.addEventListener("click" , previousSong);
 next.addEventListener("click" , nextSong);
 song.addEventListener('timeupdate' , updateProgressBar);
 progressContainer.addEventListener('click', jumpTo);
+shuffleButton.addEventListener('click', shuffleButtonClick);
