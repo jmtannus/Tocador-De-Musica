@@ -72,7 +72,7 @@ button {
     height: 3px;
     widht: 100%;
     border-radius: 15px;
-    margin-botton: 1.5em;
+    //margin-botton: 1.5em;
 }
 
 #current-progress {
@@ -81,4 +81,13 @@ button {
     height: inherit;
     width: var(--progress);
     border-radius: inherit;
+}
+
+#progress-container {
+    padding-botton: 1em;
+    cursor: pointer;
+}
+
+.button-active {
+    color: rgb(0, 128, 62);
 }

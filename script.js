@@ -142,6 +142,13 @@ function shuffleButtonClicked() {
   if(isShuffled === false){
     isShuffled = true;
     shuffleArray(sortedPlaylist);
+    shuffleButton.classList.add("button-active");
+  }
+  else {
+    isShuffled = false;
+    shuffleArray(...originalPlaylist);
+    shuffleButton.classList.remove("button-active");
+
   }
 }
 
