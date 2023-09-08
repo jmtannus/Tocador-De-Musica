@@ -51,16 +51,17 @@ button {
     flex-direction: row;
     justify-content: center;  
     margin: 1em 0 4em 0;
-    font-size:  1em;
+    font-size:  1.1em;
+    color: #8B999C;
 }
 
 #song-name {
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-weight: bolder;
 }
 
 #band-name {
-    font-size: 0.9em;
+    font-size: 1em;
     font-color:;
 }
 
@@ -84,7 +85,7 @@ button {
 }
 
 #progress-container {
-    padding-botton: 1em;
+    //padding-botton: 2em;
     cursor: pointer;
 }
 

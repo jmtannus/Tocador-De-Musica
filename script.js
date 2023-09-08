@@ -192,13 +192,21 @@ function nextOrRepeat() {
   }
 }
 
+function updateCurrentTime() {
+  songTime.innerText = song.currentTime;
+}
+
+function updateTotalTime() {
+  songTime.innerText = song.duration;
+}
 initializeSong();
 
-play.addEventListener("click" , playPauseDecider);
-previous.addEventListener("click" , previousSong);
-next.addEventListener("click" , nextSong);
-song.addEventListener('timeupdate' , nextOrRepeat);
-progressContainer.addEventListener('click', jumpTo);
-//shuffleButton.addEventListener("click", playPauseDecidersheffleButtonClicked);
-shuffleButton.addEventListener('click', shuffleButtonClicked);
+play.addEventListener("click", playPauseDecider);
+previous.addEventListener("click", previousSong);
+next.addEventListener("click", nextSong);
+song.addEventListener("timeupdate", updateProgressBar);
+song.addEventListener("ended", nextOrRepeat);
+song.addEventListener("loadedmetadata");
+progressContainer.addEventListener("click", jumpTo);
+shuffleButton.addEventListener("click", shuffleButtonClicked);
 repeatButton.addEventListener('click', repeatButtonClicked);
