@@ -1,7 +1,7 @@
 body {
-  background-image: linear-gradient(#3B585D , #1D282A);
+  background-image: linear-gradient(#DBC1AC , #38220f);
   height: 100vh;
-  color: white;
+  color: #ECE0D1;
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@ button {
   justify-content: center;
   margin: 1em 0 4em 0;
   font-size:  1.1em;
-  color: #8988A6;
+  color: #b2937a;
 }
 
 #song-name {
@@ -61,11 +61,11 @@ button {
 }
 
 .light-color {
-  color: #8B999C;
+  color: #38220F;
 }
 
 #progress-bar {
-  background-color: #8B999C;
+  background-color: #38220F ;
   height: 3px;
   width: 100%;
   border-radius: 15px;
@@ -73,7 +73,7 @@ button {
 
 #current-progress {
   --progress: 0%;
-  background-color: white;
+  background-color: #ECE0D1;
   height: inherit;
   width: var(--progress);
   border-radius: inherit;
@@ -84,7 +84,7 @@ button {
 }
 
 .button-active {
-  color: rgb(0, 183, 107);
+  color: #512410;
 }
 
 #time-box {
