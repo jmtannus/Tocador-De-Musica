@@ -1,10 +1,10 @@
-const songName = document.getElementById("song-name");
-const bandName = document.getElementById("band-name");
-const song = document.getElementById("audio");
-const cover = document.getElementById("cover");
-const play = document.getElementById("play");
-const next = document.getElementById("next");
-const previous = document.getElementById("previous");
+const songName = document.getElementById('song-name');
+const bandName = document.getElementById('band-name');
+const song = document.getElementById('audio');
+const cover = document.getElementById('cover');
+const play = document.getElementById('play');
+const next = document.getElementById('next');
+const previous = document.getElementById('previous');
 const likeButton = document.getElementById('like');
 const currentProgress = document.getElementById('current-progress');
 const progressContainer = document.getElementById('progress-container');
@@ -88,8 +88,21 @@ const euSei = {
 let isPlaying = false;
 let isShuffled = false;
 let repeatOn = false;
-const originalPlaylist = JSON.parse(localStorage.getItem('playlist'));
-let sortedPlaylist = [...originalPlaylist]
+const originalPlaylist = JSON.parse(localStorage.getItem('playlist')) ?? [
+  weaponOfChoice,
+  hangingByaMoment,
+  littleTalks,
+  lastNite,
+  andreaDoria,
+  hearMeOut,
+  cmere,
+  faint,
+  wish,
+  rockafellerSkank,
+  thatGirl,
+  euSei,
+];
+let sortedPlaylist = [...originalPlaylist];
 let index = 0;
 
 function playSong() {  
