@@ -1,6 +1,6 @@
 # Meu-Tocador-De-Musica 🎧
 
-## Com algumas Imagens geradas por IA 🤖 e icones by [Bootstrap](https://icons.getbootstrap.com)
+### Com algumas Imagens geradas por IA 🤖 e icones by [Bootstrap](https://icons.getbootstrap.com)
 
 > [Curso Básico de JavaScript](https://youtu.be/rmNMBjse-m0?si=X7f3a7ZWVGr88WXG) - Projeto Web - [Hashtag Programação](https://www.youtube.com/@HashtagProgramacao)
 
@@ -23,8 +23,7 @@ Esse projeto me ensinou como construir um player de música igual ao do Spotify.
 
 Olha como ficou: 😍 👇
 
-![projeto pronto](https://github.com/jmtannus/Tocador-De-Musica/assets/61756665/e043ac6d-d0af-4ff4-b8c1-c7e801ba3d69)
+![projeto pronto_hanging_by_a_moment](https://github.com/jmtannus/Tocador-De-Musica/assets/61756665/52e6b8b1-1175-4509-83e2-275af2c111ef) ![proejto pronto last_nite](https://github.com/jmtannus/Tocador-De-Musica/assets/61756665/add757e3-cdb7-4f54-b3b7-11ecd314ea07)
 
-## Conclusão:
-
+### Conclusão:
 *"A ideia desse Projeto Web de JavaScript é que você não só consiga criar um player de música, mas que consiga entender melhor como funciona o JavaScript e como você pode utilizar essas ferramentas.Ao final da aula você tem um projeto completo do player de música, mas tem bastante conhecimento para fazer alterações e criar seus próprios projetos.É importante que você pratique e que tente fazer algumas modificações dentro dos códigos para verificar como ele se comporta!Lembrando que a cada aula vamos evoluindo e entendendo as possibilidades que estas ferramentas trazem para concluir o nosso Projeto Web de JavaScript."* Raquel Araújo, Hashtag treinamentos
