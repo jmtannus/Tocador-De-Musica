@@ -127,7 +127,7 @@ function likeButtonRender() {
 }
 
 function initializeSong() {
-  cover.src = `images/${sortedPlaylist[index].file}.jpg`;
+  cover.src = `images/${sortedPlaylist[index].file}.webp`;
   song.src = `songs/${sortedPlaylist[index].file}.mp3`;
   songName.innerText = sortedPlaylist[index].songName;
   bandName.innerText = sortedPlaylist[index].artist;
