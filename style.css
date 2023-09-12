@@ -1,103 +1,98 @@
 body {
-    background-image: linear-gradient( #3B585D , #1D282A );    
-    height: 100vh;
-    color: white;
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-image: linear-gradient(#3B585D , #1D282A);
+  height: 100vh;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 button {
-    background-color: inherit;
-    color: inherit;
-    border: none;
+  background-color: inherit;
+  color: inherit;
+  border: none;
 }
 
 #below-cover {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 3em 0 1em 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3em 0 1em 0;
 }
 
 #button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .button {
-    font-size: 1.5em;
-    cursor: pointer;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
 .button-navigate {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 .button-biggest {
-    font-size: 4em;
+  font-size: 4em;
 }
 
 #cover {
-    widht: 450px;
+  width: 450px;
 }
 
 #playlist-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;  
-    margin: 1em 0 4em 0;
-    font-size:  1.1em;
-    color: #8B999C;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1em 0 4em 0;
+  font-size:  1.1em;
+  color: #8988A6;
 }
 
 #song-name {
-    font-size: 1.7em;
-    font-weight: bolder;
-}
-
-#band-name {
-    font-size: 1em;
-    font-color:;
+  font-size: 1.5em;
+  font-weight: bolder;
 }
 
 .light-color {
-    color: #8B999C;
+  color: #8B999C;
 }
 
 #progress-bar {
-    background-color:  #8B999C;
-    height: 3px;
-    widht: 100%;
-    border-radius: 15px;
+  background-color: #8B999C;
+  height: 3px;
+  width: 100%;
+  border-radius: 15px;
 }
 
 #current-progress {
-    --progress: 0%
-    background-color: white;
-    height: inherit;
-    width: var(--progress);
-    border-radius: inherit;
+  --progress: 0%;
+  background-color: white;
+  height: inherit;
+  width: var(--progress);
+  border-radius: inherit;
 }
 
 #progress-container {
-    //padding-botton: 2em;
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .button-active {
-    color:rgb(0, 128, 62)
+  color: rgb(0, 183, 107);
 }
 
 #time-box {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: smaller;
-    margin-top: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: smaller;
+  margin-top: 0.5em;
 }
 
+/* CARTELA DE CORES Cream Coffee Color Palette:  https://www.color-hex.com/color-palette/30023 */
