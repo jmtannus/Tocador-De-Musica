@@ -14,75 +14,75 @@ const songTime = document.getElementById('song-time');
 const totalTime = document.getElementById('total-time');
 
 const weaponOfChoice = {
-  songName : "Weapon of Choice" ,
-  artist : "Fatboy Slim" ,
-  file : "weapon-of-choice",
+  songName : 'Weapon of Choice' ,
+  artist : 'Fatboy Slim' ,
+  file : 'weapon-of-choice',
   liked: false,
 } ;
 const hangingByaMoment = {
-  songName : "Hanging by a moment" ,
-  artist : "Lifehouse" ,
-  file : "hanging-by-a-moment",
+  songName : 'Hanging by a moment' ,
+  artist : 'Lifehouse' ,
+  file : 'hanging-by-a-moment',
   liked: false,
 };
 const littleTalks = {
-  songName : "Little Talks" ,
-  artist : "Of Monsters and Men" ,
-  file : "littleTalks",
+  songName : 'Little Talks' ,
+  artist : 'Of Monsters and Men' ,
+  file : 'littleTalks',
   liked: false,
 };
 const lastNite = {
-  songName : "Last Nite" ,
-  artist : "Jumbonics" ,
-  file : "lastNite",
+  songName : 'Last Nite' ,
+  artist : 'Jumbonics' ,
+  file : 'lastNite',
   liked: false,
 };
 const andreaDoria = {
-  songName : "Andrea Doria" ,
-  artist : "Legiao Urbana" ,
-  file : "andreaDoria",
+  songName : 'Andrea Doria' ,
+  artist : 'Legiao Urbana' ,
+  file : 'andreaDoria',
   liked: false,
 } ;
 const hearMeOut = {
-  songName : "Hear Me Out" ,
-  artist : "Frou Frou" ,
-  file : "hearMeOut",
+  songName : 'Hear Me Out' ,
+  artist : 'Frou Frou' ,
+  file : 'hearMeOut',
   liked: false,
 };
 const cmere = {
-  songName : "C mere" ,
-  artist : "Interpol" ,
-  file : "cmere",
+  songName : 'C mere' ,
+  artist : 'Interpol' ,
+  file : 'cmere',
   liked: false,
 };
 const faint = {
-  songName : "Faint" ,
-  artist : "Linkin Park" ,
-  file : "faint",
+  songName : 'Faint' ,
+  artist : 'Linkin Park' ,
+  file : 'faint',
   liked: false,
 };
 const wish = {
-  songName : "I Wish I Knew How It Would Feel To Be Free" ,
-  artist : "Billy Taylor" ,
-  file : "wish",
+  songName : 'I Wish I Knew How It Would Feel To Be Free' ,
+  artist : 'Billy Taylor' ,
+  file : 'wish',
   liked: false,
 };
 const rockafellerSkank = {
-  songName : "The Rockafeller Skank " ,
-  artist : "Fatboy Slim" ,
-  file : "rockafellerSkank",
+  songName : 'The Rockafeller Skank ' ,
+  artist : 'Fatboy Slim' ,
+  file : 'rockafellerSkank',
   liked: false,
 };
 const thatGirl = {
-  songName : "That Girl" ,
-  artist : "Maxi Priest & Shaggy" ,
-  file : "thatGirl",
+  songName : 'That Girl' ,
+  artist : 'Maxi Priest & Shaggy' ,
+  file : 'thatGirl',
   liked: false,
 };
 const euSei = {
-  songName : "Eu sei" ,
-  artist : "Papas Na Lingua" ,
-  file : "euSei",
+  songName : 'Eu sei' ,
+  artist : 'Papas Na Lingua' ,
+  file : 'euSei',
   liked: false,
 };
 let isPlaying = false;
@@ -113,8 +113,8 @@ function playSong() {
 }
 
 function pauseSong() {
-  play.querySelector('.bi').classList.add("bi-play-circle-fill");
-  play.querySelector('.bi').classList.remove("bi-pause-circle-fill");
+  play.querySelector('.bi').classList.add('bi-play-circle-fill');
+  play.querySelector('.bi').classList.remove('bi-pause-circle-fill');
   song.pause();
   isPlaying = false;
 }
@@ -144,7 +144,7 @@ function initializeSong() {
   song.src = `songs/${sortedPlaylist[index].file}.mp3`;
   songName.innerText = sortedPlaylist[index].songName;
   bandName.innerText = sortedPlaylist[index].artist;
-  likeButtonRender() ;
+  likeButtonRender();
 }
 
 function previousSong() {
@@ -168,41 +168,39 @@ function nextSong() {
 }
 
 function updateProgress() {
-  const barWidht = (song.currentTime/song.duration)*100;
-  currentProgress.style.setProperty('--progress', `${barWidht}%`);
+  const barWidth = (song.currentTime / song.duration) * 100;
+  currentProgress.style.setProperty('--progress', `${barWidth}%`);
   songTime.innerText = toHHMMSS(song.currentTime);
-};
+}
 
 function jumpTo(event) {
-  const width = progressContainer.clientWidht;
+  const width = progressContainer.clientWidth;
   const clickPosition = event.offsetX;
-  const jumpToTime = (clickPosition/width)* song.duration;
+  const jumpToTime = (clickPosition / width) * song.duration;
   song.currentTime = jumpToTime;
 }
 
 function shuffleArray(preShuffleArray) {
   const size = preShuffleArray.length;
-  let currentIndex = size -1;
-  while(currentIndex > 0){
-    let randomIndex = Math.floor(Math.random()* size);
+  let currentIndex = size - 1;
+  while (currentIndex > 0) {
+    let randomIndex = Math.floor(Math.random() * size);
     let aux = preShuffleArray[currentIndex];
     preShuffleArray[currentIndex] = preShuffleArray[randomIndex];
     preShuffleArray[randomIndex] = aux;
     currentIndex -= 1;
-  } 
+  }
 }
 
 function shuffleButtonClicked() {
-  if(isShuffled === false){
+  if (isShuffled === false) {
     isShuffled = true;
     shuffleArray(sortedPlaylist);
-    shuffleButton.classList.add("button-active");
-  }
-  else {
+    shuffleButton.classList.add('button-active');
+  } else {
     isShuffled = false;
-    shuffleArray(...originalPlaylist);
-    shuffleButton.classList.remove("button-active");
-
+    sortedPlaylist = [...originalPlaylist];
+    shuffleButton.classList.remove('button-active');
   }
 }
 
@@ -216,10 +214,6 @@ function repeatButtonClicked() {
   }
 }
 
-function updateTotalTime() {
-  songTime.innerText = song.duration;
-}
-
 function nextOrRepeat() {
   if (repeatOn === false) {
     nextSong();
@@ -228,21 +222,20 @@ function nextOrRepeat() {
   }
 }
 
-function toHHMMSS(originalNumber){
-  let hours = Math.floor(originalNumber/3600);
-  let min = Math.floor(originalNumber - hours * 3600/60);
-  let secs = Math.floor(originalNumber - hours * 3600 - min*60);
+function toHHMMSS(originalNumber) {
+  let hours = Math.floor(originalNumber / 3600);
+  let min = Math.floor((originalNumber - hours * 3600) / 60);
+  let secs = Math.floor(originalNumber - hours * 3600 - min * 60);
 
-  return `${hours.toString().padStart(2, '0')}:${min.toString()
-    .padStart(2, '0')}:${secs.toString().padStart(2, "0")}`;
-}
+  console.log('hours: ', hours);
 
-function updateCurrentTime() {
-  songTime.innerText = song.currentTime;
+  return `${hours !== 0 ? hours.toString().padStart(2, '0') + ':' : ''}${min
+    .toString()
+    .padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
 }
 
 function updateTotalTime() {
-  songTime.innerText = song.duration;
+  totalTime.innerText = toHHMMSS(song.duration);
 }
 
 function likeButtonClicked() {
@@ -257,13 +250,13 @@ function likeButtonClicked() {
 
 initializeSong();
 
-play.addEventListener("click", playPauseDecider);
-previous.addEventListener("click", previousSong);
-next.addEventListener("click", nextSong);
-song.addEventListener("timeupdate", updateProgress);
-song.addEventListener("ended", nextOrRepeat);
-song.addEventListener("loadedmetadata", updateTotalTime);
-progressContainer.addEventListener("click", jumpTo);
-shuffleButton.addEventListener("click", shuffleButtonClicked);
+play.addEventListener('click', playPauseDecider);
+previous.addEventListener('click', previousSong);
+next.addEventListener('click', nextSong);
+song.addEventListener('timeupdate', updateProgress);
+song.addEventListener('ended', nextOrRepeat);
+song.addEventListener('loadedmetadata', updateTotalTime);
+progressContainer.addEventListener('click', jumpTo);
+shuffleButton.addEventListener('click', shuffleButtonClicked);
 repeatButton.addEventListener('click', repeatButtonClicked);
 likeButton.addEventListener('click', likeButtonClicked);
