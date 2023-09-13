@@ -13,6 +13,12 @@ const repeatButton = document.getElementById('repeat');
 const songTime = document.getElementById('song-time');
 const totalTime = document.getElementById('total-time');
 
+const armandinhoLuaCheia = {
+  songName : 'Lua Cheia' ,
+  artist : 'Armandinho',
+  file : 'armandinhoLuaCheia',
+  liked: false,
+}
 const weaponOfChoice = {
   songName : 'Weapon of Choice' ,
   artist : 'Fatboy Slim' ,
@@ -89,6 +95,7 @@ let isPlaying = false;
 let isShuffled = false;
 let repeatOn = false;
 const originalPlaylist = JSON.parse(localStorage.getItem('playlist')) ?? [
+  armandinhoLuaCheia,
   weaponOfChoice,
   hangingByaMoment,
   littleTalks,
